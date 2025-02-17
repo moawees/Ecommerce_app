@@ -17,7 +17,7 @@ class CartoApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData( 
           primaryColor: ColorsManager.primaryColor,
-          scaffoldBackgroundColor: ColorsManager.backgroundColor
+          scaffoldBackgroundColor: ColorsManager.back,
         ),
         initialRoute:Routes.home,
         debugShowCheckedModeBanner: false,
