@@ -1,3 +1,4 @@
+import 'package:carto/core/router/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,6 +10,9 @@ class ProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: (){
+        Navigator.of(context).pushNamed(Routes.details);
+      },
       child: Container(
           margin: EdgeInsets.only(right: 10.w),
           width: 150.w,
