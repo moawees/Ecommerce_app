@@ -7,7 +7,7 @@ class CustomButton extends StatelessWidget {
   final IconData? iconButton;
   final void Function()? onPressed;
   const CustomButton({
-    super.key, required this.textButton,  this.iconButton, required this.onPressed,
+    super.key, required this.textButton,  this.iconButton, required this.onPressed, 
   });
 
   @override
