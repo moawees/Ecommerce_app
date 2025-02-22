@@ -19,7 +19,7 @@ class CartoApp extends StatelessWidget {
           primaryColor: ColorsManager.primaryColor,
           scaffoldBackgroundColor: ColorsManager.back,
         ),
-        initialRoute:Routes.home,
+        initialRoute:Routes.login,
         debugShowCheckedModeBanner: false,
         onGenerateRoute:appRouter.onGenerateRoute, 
         

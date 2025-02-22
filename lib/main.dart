@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp( 
-    // CartoApp(appRouter: AppRouter(),)
-
     DevicePreview(
       enabled: true,
       builder: (context) => CartoApp(appRouter: AppRouter(),),

@@ -1,4 +1,5 @@
 import 'package:carto/core/router/routes.dart';
+import 'package:carto/features/Auth/presentation/views/login.dart';
 import 'package:carto/features/details/presentation/details_screen.dart';
 import 'package:carto/features/home/presentation/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,10 @@ class AppRouter {
       case Routes.home:
         return MaterialPageRoute(builder: (_) => HomeScreen());
       case Routes.details:
-        return MaterialPageRoute(builder: (_) => DetailsScreen());  
+        return MaterialPageRoute(builder: (_) => DetailsScreen());
+      case Routes.login:
+        return MaterialPageRoute(builder: (_) => Login());
+          
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
