@@ -22,9 +22,8 @@ class ColorDot extends StatelessWidget {
         padding: const EdgeInsets.all(2.5),
         decoration: BoxDecoration(
           border: Border.all(
-              color: isSelected
-                  ? ColorsManager.primaryColor
-                  : Colors.transparent),
+              color:
+                  isSelected ? ColorsManager.primaryColor : Colors.transparent),
           shape: BoxShape.circle,
         ),
         child: CircleAvatar(

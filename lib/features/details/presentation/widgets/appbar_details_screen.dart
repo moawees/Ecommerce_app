@@ -13,18 +13,17 @@ class AppBarDetailsScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Row(
         children: [
-         
           IconButton(
-           onPressed: () => Navigator.pop(context),
-           icon:CircleAvatar(
-            backgroundColor: Colors.white,
-            radius: 17.r,
-            child: Icon(
-              Icons.arrow_back_ios_new_rounded,
-              size: 17.r,
-              color: Colors.grey,),
-            )),
-          
+              onPressed: () => Navigator.pop(context),
+              icon: CircleAvatar(
+                backgroundColor: Colors.white,
+                radius: 17.r,
+                child: Icon(
+                  Icons.arrow_back_ios_new_rounded,
+                  size: 17.r,
+                  color: Colors.grey,
+                ),
+              )),
           Spacer(),
           FavouriteButton(),
         ],

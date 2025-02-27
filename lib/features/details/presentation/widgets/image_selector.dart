@@ -7,7 +7,10 @@ class ImageSelector extends StatelessWidget {
   final bool isSelected;
   final VoidCallback onTap;
   const ImageSelector({
-    super.key, required this.isSelected, required this.onTap, required this.image,
+    super.key,
+    required this.isSelected,
+    required this.onTap,
+    required this.image,
   });
 
   @override
@@ -21,16 +24,17 @@ class ImageSelector extends StatelessWidget {
         height: 40.h,
         decoration: BoxDecoration(
           color: Colors.white,
-          border: Border.all(color:isSelected? ColorsManager.primaryColor:Colors.transparent, width: 1.w),
+          border: Border.all(
+              color:
+                  isSelected ? ColorsManager.primaryColor : Colors.transparent,
+              width: 1.w),
           borderRadius: const BorderRadius.all(
             Radius.circular(10),
-            
           ),
-          
         ),
         child: Image.asset(
-          image,),
-      
+          image,
+        ),
       ),
     );
   }

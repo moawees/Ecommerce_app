@@ -18,7 +18,8 @@ class DetailsScreen extends StatelessWidget {
             AppBarDetailsScreen(),
             ImageSelectorWithPageView(),
             SizedBox(height: 10.h),
-            Expanded( // This ensures the container expands to the bottom
+            Expanded(
+              // This ensures the container expands to the bottom
               child: Container(
                 padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 35.h),
                 width: double.infinity,
@@ -34,21 +35,21 @@ class DetailsScreen extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Text("Curved Hem Shirts", style: TextStyle(fontSize: 19.sp)),
+                        Text("Curved Hem Shirts",
+                            style: TextStyle(fontSize: 19.sp)),
                         Spacer(),
                         Text("\$100", style: TextStyle(fontSize: 19.sp)),
                       ],
                     ),
                     SizedBox(height: 8.h),
                     Text(
-                       maxLines: getMaxLines(context),
-                       overflow: TextOverflow.ellipsis,
+                      maxLines: getMaxLines(context),
+                      overflow: TextOverflow.ellipsis,
                       "This is a description of the product...This is a description of the product...This is a description of the product...This is a description of the product...This is a description of the product...This is a description of the product...This is a description of the product...This is a description of the product...",
                       style: TextStyle(
-                        
-                        fontSize: 14.sp, 
+                        fontSize: 14.sp,
                         height: 1.3.h,
-                        ),
+                      ),
                     ),
                     SizedBox(height: 15.h),
                     Text("Colors", style: TextStyle(fontSize: 18.sp)),
@@ -58,7 +59,8 @@ class DetailsScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(bottom: 20.h),
                       child: Center(
-                        child: CustomButton(textButton: "Add to Cart", onPressed: () {}),
+                        child: CustomButton(
+                            textButton: "Add to Cart", onPressed: () {}),
                       ),
                     ),
                   ],
@@ -71,12 +73,3 @@ class DetailsScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-

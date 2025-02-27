@@ -9,19 +9,16 @@ class CustomCheckBox extends StatefulWidget {
 }
 
 class _CustomCheckBoxState extends State<CustomCheckBox> {
-  bool isChecked=false;
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
-    return  Checkbox(
-      activeColor: ColorsManager.primaryColor,
-      value: isChecked, 
-      onChanged:(value){
-        setState(() {
-          isChecked=value!;
-          
+    return Checkbox(
+        activeColor: ColorsManager.primaryColor,
+        value: isChecked,
+        onChanged: (value) {
+          setState(() {
+            isChecked = value!;
+          });
         });
-      }
-      
-      );
   }
 }

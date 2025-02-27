@@ -9,7 +9,6 @@ class FavouriteButton extends StatefulWidget {
 }
 
 class _FavouriteButtonState extends State<FavouriteButton> {
-
   bool isFavourite = false;
 
   @override

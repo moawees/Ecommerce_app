@@ -16,15 +16,15 @@ class HomeAppbar extends StatelessWidget {
         child: TextField(
             onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
             decoration: InputDecoration(
-          border: InputBorder.none,
-          prefixIcon: Icon(
-            Icons.search,
-            size: 20.r,
-            color: Colors.grey,
-          ),
-          hintText: 'Search Products...',
-          hintStyle: TextStyle(color: Colors.grey, fontSize: 15.sp),
-        )),
+              border: InputBorder.none,
+              prefixIcon: Icon(
+                Icons.search,
+                size: 20.r,
+                color: Colors.grey,
+              ),
+              hintText: 'Search Products...',
+              hintStyle: TextStyle(color: Colors.grey, fontSize: 15.sp),
+            )),
       ),
       Spacer(),
       CircleAvatar(

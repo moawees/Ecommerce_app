@@ -7,7 +7,10 @@ class CustomButton extends StatelessWidget {
   final IconData? iconButton;
   final void Function()? onPressed;
   const CustomButton({
-    super.key, required this.textButton,  this.iconButton, required this.onPressed, 
+    super.key,
+    required this.textButton,
+    this.iconButton,
+    required this.onPressed,
   });
 
   @override
@@ -17,10 +20,10 @@ class CustomButton extends StatelessWidget {
       width: 208.w,
       child: ElevatedButton(
           style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(
-                  ColorsManager.primaryColor)),
-          onPressed:onPressed ,
-          child:  Row(
+              backgroundColor:
+                  MaterialStateProperty.all<Color>(ColorsManager.primaryColor)),
+          onPressed: onPressed,
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
@@ -28,14 +31,12 @@ class CustomButton extends StatelessWidget {
                 style: const TextStyle(color: Colors.white, fontSize: 18),
               ),
               Visibility(
-                visible: iconButton != null? true:false,
+                visible: iconButton != null ? true : false,
                 child: Icon(
                   iconButton,
-                  
                   color: Colors.white,
                 ),
               ),
-              
             ],
           )),
     );

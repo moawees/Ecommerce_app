@@ -10,34 +10,30 @@ class LoginWithAnotherWay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisSize:MainAxisSize.min,
+      mainAxisSize: MainAxisSize.min,
       children: [
         GestureDetector(
-          onTap: (){},
+          onTap: () {},
           child: CircleAvatar(
             radius: 28.r,
             backgroundColor: Colors.white,
             child: SvgPicture.asset(
-              height: 25.h,
-              width: 25.w, 
-              'assets/images/Facebook.svg'
-               ),
+                height: 25.h, width: 25.w, 'assets/images/Facebook.svg'),
           ),
-          ),
-        SizedBox(width: 25.w,),
+        ),
+        SizedBox(
+          width: 25.w,
+        ),
         GestureDetector(
-          onTap: (){},
+          onTap: () {},
           child: CircleAvatar(
             radius: 28.r,
             backgroundColor: Colors.white,
             child: SvgPicture.asset(
-              height: 25.h,
-              width: 25.w, 
-              'assets/images/google.svg'
-               ),
+                height: 25.h, width: 25.w, 'assets/images/google.svg'),
           ),
-          ),
+        ),
       ],
-        );
+    );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:carto/core/router/routes.dart';
-import 'package:carto/features/Auth/presentation/views/login.dart';
-import 'package:carto/features/Auth/presentation/views/signup.dart';
+import 'package:carto/features/Auth/login/ui/login.dart';
+import 'package:carto/features/Auth/sign_up/ui/signup.dart';
 import 'package:carto/features/details/presentation/details_screen.dart';
 import 'package:carto/features/home/presentation/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +16,7 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => Login());
       case Routes.signup:
         return MaterialPageRoute(builder: (_) => Signup());
-        
-          
+
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

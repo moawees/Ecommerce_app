@@ -10,12 +10,12 @@ class ShowLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(top: 30.h, bottom: 10.h,),
-      child: SvgPicture.asset(
-        height: 70.h,
-        width: 70.w, 
-        'assets/images/logo.svg'
-         ),
+      padding: EdgeInsets.only(
+        top: 30.h,
+        bottom: 10.h,
+      ),
+      child:
+          SvgPicture.asset(height: 70.h, width: 70.w, 'assets/images/logo.svg'),
     );
   }
 }

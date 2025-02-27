@@ -21,4 +21,3 @@ class ProductListView extends StatelessWidget {
     );
   }
 }
-

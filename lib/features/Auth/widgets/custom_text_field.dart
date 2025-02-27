@@ -40,23 +40,17 @@ class _CustomTextFieldState extends State<CustomTextField> {
         child: TextField(
           obscureText: widget.isPassword ? _isObscure : false,
           decoration: InputDecoration(
-            hintText: widget.hintText ,
-            hintStyle:  TextStyle(
-              color: Colors.grey, 
-              fontSize: 14.sp, 
-              height: 2.h
-              ),
+            hintText: widget.hintText,
+            hintStyle:
+                TextStyle(color: Colors.grey, fontSize: 14.sp, height: 2.h),
             border: InputBorder.none,
             prefixIcon: Padding(
-              padding:  EdgeInsets.all(3.r),
+              padding: EdgeInsets.all(3.r),
               child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.r),
-                  color: ColorsManager.primaryColor.withOpacity(.2)
-                ),
-                child: Icon(
-                  widget.icon,
-                  color: ColorsManager.primaryColor)),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.r),
+                      color: ColorsManager.primaryColor.withOpacity(.2)),
+                  child: Icon(widget.icon, color: ColorsManager.primaryColor)),
             ),
             suffixIcon: widget.isPassword
                 ? IconButton(

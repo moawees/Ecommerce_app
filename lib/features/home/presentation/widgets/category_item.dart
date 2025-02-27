@@ -6,22 +6,22 @@ class CategoryItem extends StatelessWidget {
     super.key,
     required this.categoryName,
   });
- final String? categoryName;
+  final String? categoryName;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
         margin: EdgeInsets.only(right: 10.w),
-        padding: EdgeInsets.symmetric(horizontal: 14.w,),  
+        padding: EdgeInsets.symmetric(
+          horizontal: 14.w,
+        ),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           border: Border.all(
             color: Colors.grey,
-      
           ),
           borderRadius: BorderRadius.circular(25.r),
-      
         ),
         child: Text(
           categoryName!,

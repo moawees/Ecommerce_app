@@ -10,7 +10,7 @@ class ProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         Navigator.of(context).pushNamed(Routes.details);
       },
       child: Container(
@@ -35,7 +35,6 @@ class ProductView extends StatelessWidget {
                 ),
                 child: Image.asset(
                   'assets/images/product1.png',
-                  
                 ),
               ),
               Padding(
