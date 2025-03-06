@@ -2,6 +2,7 @@ class EndPoints {
   static const String baseUrl =
       'https://e-commerce-production-0870.up.railway.app/api/v1/';
   static const String login = 'auth/login';
+  static const String signUp = 'auth/signUp';
 }
 
 class ApiKey {
