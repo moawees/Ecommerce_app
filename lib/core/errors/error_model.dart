@@ -9,12 +9,11 @@ class ErrorModel {
             .toList(),
       );
 
-
-
   Map<String, dynamic> toJson() => {
         'errors': errors?.map((e) => e.toJson()).toList(),
       };
 }
+
 class Error {
   String? type;
   String? value;

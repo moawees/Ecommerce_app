@@ -10,7 +10,7 @@ class LoginCubit extends Cubit<LoginState> {
     this.loginRepo,
   ) : super(LoginInitial());
   final LoginRepo loginRepo;
- 
+
   GlobalKey<FormState> signInFormKey = GlobalKey();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();

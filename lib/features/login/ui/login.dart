@@ -11,7 +11,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:carto/core/router/routes.dart';
 import 'package:carto/core/widgets/custom_buttom.dart';
 
-
 class Login extends StatelessWidget {
   const Login({super.key});
 
@@ -33,9 +32,7 @@ class Login extends StatelessWidget {
             ),
           );
         }
-        
       },
-
       builder: (context, state) {
         return Scaffold(
           body: SafeArea(
@@ -57,33 +54,31 @@ class Login extends StatelessWidget {
                   height: 50.h,
                 ),
                 Form(
-                  key: context.read<LoginCubit>().signInFormKey,
-                  
-                  child:Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: 22.w),
-                    child: Column(
-                      
-                      children: [
-                              CustomTextField(
-                          controller: context.read<LoginCubit>().emailController,
-                          hintText: "Email",
-                          icon: Icons.email,
-                          isPassword: false,
-                        ),
-                        SizedBox(
-                          height: 15.h,
-                        ),
-                        CustomTextField(
-                          controller: context.read<LoginCubit>().passwordController,
-                          hintText: "Password",
-                          icon: Icons.lock,
-                          isPassword: true,
-                        ),
-                    
-                      ],
-                    ),
-                  ) ),
-                
+                    key: context.read<LoginCubit>().signInFormKey,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 22.w),
+                      child: Column(
+                        children: [
+                          CustomTextField(
+                            controller:
+                                context.read<LoginCubit>().emailController,
+                            hintText: "Email",
+                            icon: Icons.email,
+                            isPassword: false,
+                          ),
+                          SizedBox(
+                            height: 15.h,
+                          ),
+                          CustomTextField(
+                            controller:
+                                context.read<LoginCubit>().passwordController,
+                            hintText: "Password",
+                            icon: Icons.lock,
+                            isPassword: true,
+                          ),
+                        ],
+                      ),
+                    )),
                 SizedBox(
                   height: 10.h,
                 ),
@@ -104,16 +99,21 @@ class Login extends StatelessWidget {
                 SizedBox(
                   height: 15.h,
                 ),
-                state is LoginLoading? 
-                CircularProgressIndicator(
-                  color: ColorsManager.primaryColor,
-                )
-                :CustomButton(
-                    textButton: "Login",
-                    onPressed: () {
-                      if(context.read<LoginCubit>().signInFormKey.currentState!.validate()){
-                      context.read<LoginCubit>().emitLoginState();}
-                    }),
+                state is LoginLoading
+                    ? CircularProgressIndicator(
+                        color: ColorsManager.primaryColor,
+                      )
+                    : CustomButton(
+                        textButton: "Login",
+                        onPressed: () {
+                          if (context
+                              .read<LoginCubit>()
+                              .signInFormKey
+                              .currentState!
+                              .validate()) {
+                            context.read<LoginCubit>().emitLoginState();
+                          }
+                        }),
                 SizedBox(
                   height: 20.h,
                 ),

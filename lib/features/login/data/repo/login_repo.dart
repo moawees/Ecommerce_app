@@ -24,7 +24,6 @@ class LoginRepo {
       return Left(user);
     } catch (e) {
       return Right(
-        
         ErrorHandler.handle(e),
       );
     }

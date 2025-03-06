@@ -5,11 +5,9 @@ abstract class Failure {
   Failure({required this.errMessage});
 }
 
-
 class NetworkFailure extends Failure {
   NetworkFailure({required String message}) : super(errMessage: message);
 }
-
 
 class ServerFailure extends Failure {
   ServerFailure({required String message}) : super(errMessage: message);
@@ -21,7 +19,8 @@ class ErrorHandler {
       switch (error.type) {
         case DioExceptionType.connectionError:
         case DioExceptionType.connectionTimeout:
-          return NetworkFailure(message: 'Connection error. Please check your internet.');
+          return NetworkFailure(
+              message: 'Connection error. Please check your internet.');
 
         case DioExceptionType.sendTimeout:
           return NetworkFailure(message: 'Send timeout.');
@@ -39,7 +38,8 @@ class ErrorHandler {
           return NetworkFailure(message: 'Unknown network error.');
 
         default:
-          return NetworkFailure(message: 'Something went wrong, please try again later.');
+          return NetworkFailure(
+              message: 'Something went wrong, please try again later.');
       }
     } else {
       return ServerFailure(message: 'Unexpected error occurred.');
@@ -48,14 +48,16 @@ class ErrorHandler {
 
   static Failure _handleError(dynamic data) {
     if (data is Map<String, dynamic>) {
-      
       if (data.containsKey('message') && data['message'] is String) {
         return ServerFailure(message: data['message']);
       }
 
       if (data.containsKey('errors') && data['errors'] is List) {
         List<String> errorMessages = (data['errors'] as List)
-            .where((e) => e is Map<String, dynamic> && e.containsKey('msg') && e['msg'] is String)
+            .where((e) =>
+                e is Map<String, dynamic> &&
+                e.containsKey('msg') &&
+                e['msg'] is String)
             .map((e) => e['msg'] as String)
             .toList();
 

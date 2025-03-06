@@ -10,11 +10,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
-
 class AppRouter {
-   final LoginRepo loginRepo;
-   AppRouter() : loginRepo = LoginRepo(api: DioConsumer(dio: Dio()));  
+  final LoginRepo loginRepo;
+  AppRouter() : loginRepo = LoginRepo(api: DioConsumer(dio: Dio()));
   Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.home:
@@ -24,9 +22,8 @@ class AppRouter {
       case Routes.login:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
-                  create: (context) =>LoginCubit(
-                   loginRepo,
-                    
+                  create: (context) => LoginCubit(
+                    loginRepo,
                   ),
                   child: Login(),
                 ));
