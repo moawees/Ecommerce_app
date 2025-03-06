@@ -1,5 +1,5 @@
-import 'package:carto/features/Auth/widgets/custom_check_box.dart';
-import 'package:carto/features/Auth/widgets/have_account_or_no_button.dart';
+import 'package:carto/features/login/ui/widgets/custom_check_box.dart';
+import 'package:carto/features/login/ui/widgets/have_account_or_no_button.dart';
 import 'package:flutter/material.dart';
 
 class TermsAndConidition extends StatelessWidget {

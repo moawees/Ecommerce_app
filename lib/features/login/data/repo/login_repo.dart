@@ -2,8 +2,8 @@
 import 'package:carto/core/errors/erorr_handler.dart';
 import 'package:carto/core/networking/api_consumer.dart';
 import 'package:carto/core/networking/end_points.dart';
-import 'package:carto/features/Auth/login/data/models/login_request_body_model.dart';
-import 'package:carto/features/Auth/login/data/models/login_respons_model.dart';
+import 'package:carto/features/login/data/models/login_request_body_model.dart';
+import 'package:carto/features/login/data/models/login_respons_model.dart';
 import 'package:dartz/dartz.dart';
 
 class LoginRepo {

@@ -1,11 +1,11 @@
 import 'package:carto/core/router/routes.dart';
 import 'package:carto/core/widgets/custom_buttom.dart';
-import 'package:carto/features/Auth/widgets/custom_text_field.dart';
-import 'package:carto/features/Auth/widgets/have_account_or_no_button.dart';
-import 'package:carto/features/Auth/widgets/login_with_another_way.dart';
-import 'package:carto/features/Auth/widgets/or_divider.dart';
-import 'package:carto/features/Auth/widgets/showlogo.dart';
-import 'package:carto/features/Auth/widgets/terms_and_conidition.dart';
+import 'package:carto/features/login/ui/widgets/custom_text_field.dart';
+import 'package:carto/features/login/ui/widgets/have_account_or_no_button.dart';
+import 'package:carto/features/login/ui/widgets/login_with_another_way.dart';
+import 'package:carto/features/login/ui/widgets/or_divider.dart';
+import 'package:carto/features/login/ui/widgets/showlogo.dart';
+import 'package:carto/features/login/ui/widgets/terms_and_conidition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

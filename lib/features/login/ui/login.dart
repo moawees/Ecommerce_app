@@ -1,10 +1,10 @@
 import 'package:carto/core/theme/colors.dart';
-import 'package:carto/features/Auth/login/cubit/login_cubit.dart';
-import 'package:carto/features/Auth/widgets/custom_text_field.dart';
-import 'package:carto/features/Auth/widgets/have_account_or_no_button.dart';
-import 'package:carto/features/Auth/widgets/login_with_another_way.dart';
-import 'package:carto/features/Auth/widgets/or_divider.dart';
-import 'package:carto/features/Auth/widgets/showlogo.dart';
+import 'package:carto/features/login/cubit/login_cubit.dart';
+import 'package:carto/features/login/ui/widgets/custom_text_field.dart';
+import 'package:carto/features/login/ui/widgets/have_account_or_no_button.dart';
+import 'package:carto/features/login/ui/widgets/login_with_another_way.dart';
+import 'package:carto/features/login/ui/widgets/or_divider.dart';
+import 'package:carto/features/login/ui/widgets/showlogo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

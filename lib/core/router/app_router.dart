@@ -1,9 +1,9 @@
 import 'package:carto/core/networking/dio_consumer.dart';
 import 'package:carto/core/router/routes.dart';
-import 'package:carto/features/Auth/login/cubit/login_cubit.dart';
-import 'package:carto/features/Auth/login/data/repo/login_repo.dart';
-import 'package:carto/features/Auth/login/ui/login.dart';
-import 'package:carto/features/Auth/sign_up/ui/signup.dart';
+import 'package:carto/features/login/cubit/login_cubit.dart';
+import 'package:carto/features/login/data/repo/login_repo.dart';
+import 'package:carto/features/login/ui/login.dart';
+import 'package:carto/features/sign_up/ui/signup.dart';
 import 'package:carto/features/details/presentation/details_screen.dart';
 import 'package:carto/features/home/presentation/home_screen.dart';
 import 'package:dio/dio.dart';
