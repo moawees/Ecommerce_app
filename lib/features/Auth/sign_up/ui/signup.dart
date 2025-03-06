@@ -32,35 +32,36 @@ class Signup extends StatelessWidget {
             SizedBox(
               height: 25.h,
             ),
-            CustomTextField(
-              hintText: "Name",
-              icon: Icons.person,
-              isPassword: false,
-            ),
+            // CustomTextField(
+            //   controller: ,
+            //   hintText: "Name",
+            //   icon: Icons.person,
+            //   isPassword: false,
+            // ),
             SizedBox(
               height: 13.h,
             ),
-            CustomTextField(
-              hintText: "Email",
-              icon: Icons.email,
-              isPassword: false,
-            ),
+            // CustomTextField(
+            //   hintText: "Email",
+            //   icon: Icons.email,
+            //   isPassword: false,
+            // ),
             SizedBox(
               height: 13.h,
             ),
-            CustomTextField(
-              hintText: "Password",
-              icon: Icons.lock,
-              isPassword: true,
-            ),
+            // CustomTextField(
+            //   hintText: "Password",
+            //   icon: Icons.lock,
+            //   isPassword: true,
+            // ),
             SizedBox(
               height: 13.h,
             ),
-            CustomTextField(
-              hintText: "Confirm Password",
-              icon: Icons.lock,
-              isPassword: true,
-            ),
+            // CustomTextField(
+            //   hintText: "Confirm Password",
+            //   icon: Icons.lock,
+            //   isPassword: true,
+            // ),
             SizedBox(
               height: 5.h,
             ),

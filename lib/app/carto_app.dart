@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class CartoApp extends StatelessWidget {
-  CartoApp({super.key, required this.appRouter});
+  CartoApp( {super.key, required this.appRouter});
   AppRouter appRouter;
 
   @override

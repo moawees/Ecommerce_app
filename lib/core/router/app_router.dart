@@ -1,11 +1,20 @@
+import 'package:carto/core/networking/dio_consumer.dart';
 import 'package:carto/core/router/routes.dart';
+import 'package:carto/features/Auth/login/cubit/login_cubit.dart';
+import 'package:carto/features/Auth/login/data/repo/login_repo.dart';
 import 'package:carto/features/Auth/login/ui/login.dart';
 import 'package:carto/features/Auth/sign_up/ui/signup.dart';
 import 'package:carto/features/details/presentation/details_screen.dart';
 import 'package:carto/features/home/presentation/home_screen.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+
 
 class AppRouter {
+   final LoginRepo loginRepo;
+   AppRouter() : loginRepo = LoginRepo(api: DioConsumer(dio: Dio()));  
   Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.home:
@@ -13,7 +22,14 @@ class AppRouter {
       case Routes.details:
         return MaterialPageRoute(builder: (_) => DetailsScreen());
       case Routes.login:
-        return MaterialPageRoute(builder: (_) => Login());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) =>LoginCubit(
+                   loginRepo,
+                    
+                  ),
+                  child: Login(),
+                ));
       case Routes.signup:
         return MaterialPageRoute(builder: (_) => Signup());
 
