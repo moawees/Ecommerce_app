@@ -1,3 +1,4 @@
+import 'package:carto/core/widgets/coming_soon_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -13,7 +14,9 @@ class LoginWithAnotherWay extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            showComingSoonDialog(context);
+          },
           child: CircleAvatar(
             radius: 28.r,
             backgroundColor: Colors.white,
@@ -25,7 +28,9 @@ class LoginWithAnotherWay extends StatelessWidget {
           width: 25.w,
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            showComingSoonDialog(context);
+          },
           child: CircleAvatar(
             radius: 28.r,
             backgroundColor: Colors.white,
