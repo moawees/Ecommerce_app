@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:carto/core/errors/erorr_handler.dart';
-import 'package:carto/features/sign_up/data/repos/sign_up_repo.dart';
+import 'package:carto/features/signup/data/repos/sign_up_repo.dart';
 import 'package:flutter/material.dart';
 
 

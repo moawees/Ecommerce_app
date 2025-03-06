@@ -1,8 +1,8 @@
 import 'package:carto/core/errors/erorr_handler.dart';
 import 'package:carto/core/networking/api_consumer.dart';
 import 'package:carto/core/networking/end_points.dart';
-import 'package:carto/features/sign_up/data/models/sign_up_request_model.dart';
-import 'package:carto/features/sign_up/data/models/sign_up_response_model.dart';
+import 'package:carto/features/signup/data/models/sign_up_request_model.dart';
+import 'package:carto/features/signup/data/models/sign_up_response_model.dart';
 import 'package:dartz/dartz.dart';
 
 class SignUpRepo {
