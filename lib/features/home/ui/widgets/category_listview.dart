@@ -1,4 +1,4 @@
-import 'package:carto/features/home/presentation/widgets/category_item.dart';
+import 'package:carto/features/home/ui/widgets/category_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

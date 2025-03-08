@@ -1,22 +1,22 @@
-import 'package:carto/features/home/presentation/widgets/product_view.dart';
+import 'package:carto/features/home/ui/widgets/recently_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ProductListView extends StatelessWidget {
-  const ProductListView({
+class RecentlyItemListView extends StatelessWidget {
+  const RecentlyItemListView({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 158.h,
+      height: 180.h,
       child: ListView.builder(
           itemCount: 5,
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return ProductView();
+            return RecentlyViewItem();
           }),
     );
   }

@@ -9,6 +9,7 @@ part 'sign_up_state.dart';
 class SignUpCubit extends Cubit<SignUpState> {
   final SignUpRepo signUpRepo;
   SignUpCubit(this.signUpRepo) : super(SignUpInitial());
+  bool isChecked = false;
   GlobalKey<FormState> signUpFormKey = GlobalKey();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -30,6 +31,11 @@ class SignUpCubit extends Cubit<SignUpState> {
     }, (error) {
       emit(SignUpFailed(error));
     });
+  }
+
+  void toggleCheckbox(bool value) {
+    isChecked = value; 
+    emit(SignUpCheckboxChanged(isChecked));
   }
 
 }

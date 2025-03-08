@@ -22,9 +22,8 @@ class Signup extends StatelessWidget {
       body: BlocConsumer<SignUpCubit, SignUpState>(
         listener: (context, state) {
           if (state is SignUpSuccess) {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text("Sign up success"),
-            ));
+
+            Navigator.pushNamedAndRemoveUntil(context, Routes.login, (route) => false);
           } else if (state is SignUpFailed) {
             showErrorDialog(context, state.error.errMessage);
           }

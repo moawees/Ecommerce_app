@@ -1,5 +1,6 @@
 import 'package:carto/core/networking/dio_consumer.dart';
 import 'package:carto/core/router/routes.dart';
+import 'package:carto/features/home/ui/main_view.dart';
 import 'package:carto/features/login/cubit/login_cubit.dart';
 import 'package:carto/features/login/data/repo/login_repo.dart';
 import 'package:carto/features/login/ui/login.dart';
@@ -7,7 +8,6 @@ import 'package:carto/features/signup/cubit/sign_up_cubit.dart';
 import 'package:carto/features/signup/data/repos/sign_up_repo.dart';
 import 'package:carto/features/signup/ui/signup.dart';
 import 'package:carto/features/details/presentation/details_screen.dart';
-import 'package:carto/features/home/presentation/home_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +18,7 @@ class AppRouter {
   Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.home:
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+        return MaterialPageRoute(builder: (_) => MainView());
       case Routes.details:
         return MaterialPageRoute(builder: (_) => DetailsScreen());
       case Routes.login:

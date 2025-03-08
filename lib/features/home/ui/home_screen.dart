@@ -1,7 +1,7 @@
-import 'package:carto/features/home/presentation/widgets/category_listview.dart';
-import 'package:carto/features/home/presentation/widgets/home_appbar.dart';
-import 'package:carto/features/home/presentation/widgets/product_listview.dart';
-import 'package:carto/features/home/presentation/widgets/recently_item_listview.dart';
+import 'package:carto/features/home/ui/widgets/category_listview.dart';
+import 'package:carto/features/home/ui/widgets/home_appbar.dart';
+import 'package:carto/features/home/ui/widgets/product_listview.dart';
+import 'package:carto/features/home/ui/widgets/recently_item_listview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,6 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     
         body: SafeArea(
             child: SingleChildScrollView(
                 child: Padding(
