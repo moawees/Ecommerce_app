@@ -1,7 +1,6 @@
 import 'package:carto/features/home/ui/widgets/category_listview.dart';
 import 'package:carto/features/home/ui/widgets/home_appbar.dart';
 import 'package:carto/features/home/ui/widgets/product_listview.dart';
-import 'package:carto/features/home/ui/widgets/recently_item_listview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +14,7 @@ class HomeScreen extends StatelessWidget {
         body: SafeArea(
             child: SingleChildScrollView(
                 child: Padding(
-      padding: const EdgeInsets.only(left: 15, right: 15, top: 20.0),
+      padding:  EdgeInsets.only(left: 8.w, right: 8.w, ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,7 +30,7 @@ class HomeScreen extends StatelessWidget {
           ),
           CategoryListView(),
           SizedBox(
-            height: 30.h,
+            height: 35.h,
           ),
           Row(
             children: [
@@ -53,27 +52,10 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 12.h,
+            height: 17.h,
           ),
           ProductListView(),
-          SizedBox(
-            height: 15.h,
-          ),
-          Text(
-            "Recently Viewed",
-            style: TextStyle(
-              fontSize: 20.sp,
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(
-            height: 15.h,
-          ),
-          RecentlyItemListView(),
-          SizedBox(
-            height: 20.h,
-          ),
+   
         ],
       ),
     ))));
