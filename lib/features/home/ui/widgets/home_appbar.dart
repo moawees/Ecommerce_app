@@ -1,8 +1,13 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeAppbar extends StatelessWidget {
-  const HomeAppbar({super.key});
+  const HomeAppbar({
+    Key? key,
+    required this.onTap,
+  }) : super(key: key);
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +31,16 @@ class HomeAppbar extends StatelessWidget {
       //         hintStyle: TextStyle(color: Colors.grey, fontSize: 15.sp),
       //       )),
       // ),
-      CircleAvatar(
-        radius: 23.r,
-        backgroundColor: Colors.grey.shade200,
-        child: Icon(
-          Icons.menu,
-          color: Colors.grey,
-          size: 22.r,
+      GestureDetector(
+        onTap: onTap,
+        child: CircleAvatar(
+          radius: 23.r,
+          backgroundColor: Colors.grey.shade200,
+          child: Icon(
+            Icons.menu,
+            color: Colors.grey,
+            size: 22.r,
+          ),
         ),
       ),
       SizedBox(

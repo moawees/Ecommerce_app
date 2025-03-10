@@ -1,6 +1,7 @@
 import 'package:carto/core/networking/dio_consumer.dart';
 import 'package:carto/core/router/routes.dart';
 import 'package:carto/core/widgets/main_view.dart';
+import 'package:carto/features/home/cubit/drawer_cubit.dart';
 import 'package:carto/features/login/cubit/login_cubit.dart';
 import 'package:carto/features/login/data/repo/login_repo.dart';
 import 'package:carto/features/login/ui/login.dart';
@@ -18,7 +19,11 @@ class AppRouter {
   Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.home:
-        return MaterialPageRoute(builder: (_) => MainView());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => DrawerCubit(),
+                  child: MainView(),
+                ));
       case Routes.details:
         return MaterialPageRoute(builder: (_) => DetailsScreen());
       case Routes.login:
