@@ -1,10 +1,17 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carto/core/router/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductView extends StatelessWidget {
+  final String image;
+  final String title;
+  final double price;
   const ProductView({
     super.key,
+    required this.image,
+    required this.title,
+    required this.price,
   });
 
   @override
@@ -33,14 +40,18 @@ class ProductView extends StatelessWidget {
                     topRight: Radius.circular(20.r),
                   ),
                 ),
-                child: Image.asset(
-                  'assets/images/product1.png',
+                child: CachedNetworkImage(
+                  fit: BoxFit.fill,
+                  imageUrl: image,
+                  errorWidget: (context, url, error) => const Icon(
+                    Icons.error,
+                  ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 8, top: 8, bottom: 8),
                 child: Text(
-                  'Sony WH/1000M577777777777777777777777777777',
+                  title,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -51,7 +62,7 @@ class ProductView extends StatelessWidget {
               ),
               Center(
                 child: Text(
-                  '\$ 4,999',
+                  '\$ ${price}',
                   maxLines: 1,
                   style: TextStyle(
                       fontSize: 14.sp,
