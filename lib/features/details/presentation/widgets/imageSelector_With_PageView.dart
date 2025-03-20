@@ -2,6 +2,7 @@ import 'package:carto/features/details/presentation/widgets/image_selector.dart'
 import 'package:flutter/material.dart';
 
 class ImageSelectorWithPageView extends StatefulWidget {
+  
   const ImageSelectorWithPageView({
     super.key,
   });
