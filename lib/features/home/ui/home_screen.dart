@@ -1,5 +1,4 @@
 import 'package:carto/core/networking/dio_consumer.dart';
-import 'package:carto/core/theme/colors.dart';
 import 'package:carto/features/home/cubit/fetch_products_cubit.dart';
 import 'package:carto/features/home/data/repo/home_repo.dart';
 import 'package:carto/features/home/ui/widgets/category_listview.dart';
@@ -19,8 +18,8 @@ class HomeScreen extends StatelessWidget {
     return BlocBuilder<DrawerCubit, bool>(
       builder: (context, isDrawerOpen) {
         return Scaffold(
-          backgroundColor:
-              isDrawerOpen ? Colors.white : ColorsManager.backgroundColor,
+          // backgroundColor:
+          //     isDrawerOpen ? Colors.white : ColorsManager.backgroundColor,
           body: SafeArea(
             child: SingleChildScrollView(
               child: Padding(
@@ -57,7 +56,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 17.h),
                     BlocProvider(
-                      create: (context) => FetchProductsCubit(HomeRepo(api:DioConsumer(dio: Dio()) )),
+                      create: (context) => FetchProductsCubit(
+                          HomeRepo(api: DioConsumer(dio: Dio())))
+                        ..fetchProducts(),
                       child: ProductListView(),
                     ),
                   ],

@@ -49,9 +49,9 @@ class Product {
 
 
 
-  static List<Product> parseProducts(dynamic responseBody) {
-    return (responseBody['data'] as List)
-        .map((json) => Product.fromJson(json))
-        .toList();
-  }
+  // static List<Product> parseProducts(dynamic responseBody) {
+  //   return (responseBody['data'] as List)
+  //       .map((json) => Product.fromJson(json))
+  //       .toList();
+  // }
 }

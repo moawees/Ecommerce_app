@@ -15,12 +15,12 @@ class FetchProductsCubit extends Cubit<FetchProductsState> {
     emit(FetchProductsLoading());
     var response = await _homeRepo.fetchProducts();
     response.fold(
-      (String) => emit(FetchProductsFailure(String)),
+      (string) => emit(FetchProductsFailure(string)),
       (products) => emit(FetchProductsSuccess(products)),
       
       
     );
-    print(response);
+    
   }
   
 

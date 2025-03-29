@@ -10,8 +10,11 @@ class HomeRepo {
   Future<Either<String,List<Product>>> fetchProducts() async {
     try {
       final response = await api.get('product');
-      final products = Product.parseProducts(response);
-      return Right(products);
+      final  List<Product> productsList= [];
+      for (var product in response['data']) {
+        productsList.add(Product.fromJson(product));
+      }
+      return Right(productsList);
     } catch (e) {
       return Left(e.toString());
     }
