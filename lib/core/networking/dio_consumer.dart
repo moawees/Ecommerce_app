@@ -1,5 +1,6 @@
 import 'package:carto/core/errors/erorr_handler.dart';
 import 'package:carto/core/networking/api_consumer.dart';
+import 'package:carto/core/networking/dio_interceptor.dart';
 import 'package:carto/core/networking/end_points.dart';
 import 'package:dio/dio.dart';
 
@@ -17,6 +18,7 @@ class DioConsumer extends ApiConsumer {
       responseBody: true,
       error: true,
     ));
+    dio.interceptors.add(DioInterceptor());
   }
 
   @override
