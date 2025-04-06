@@ -1,7 +1,6 @@
 import 'package:carto/core/functions/helper_functions.dart';
 import 'package:carto/core/networking/dio_consumer.dart';
 import 'package:carto/core/widgets/custom_buttom.dart';
-import 'package:carto/features/cart/data/model/cart_request_model.dart';
 import 'package:carto/features/cart/data/repo/cart_repo.dart';
 import 'package:carto/features/details/presentation/widgets/appbar_details_screen.dart';
 import 'package:carto/features/details/presentation/widgets/color_selector.dart';

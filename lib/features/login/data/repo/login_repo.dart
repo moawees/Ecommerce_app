@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:carto/core/cache/cache_helper.dart';
 import 'package:carto/core/errors/erorr_handler.dart';
 import 'package:carto/core/networking/api_consumer.dart';
 import 'package:carto/core/networking/end_points.dart';
@@ -20,6 +21,7 @@ class LoginRepo {
         data: LoginRequestBodyModel(email: email, password: password).toJson(),
       );
       final user = LoginResponsModel.fromJson(response);
+      CacheHelper().saveData(key: "token",value: user.token);
 
       return Left(user);
     } catch (e) {
