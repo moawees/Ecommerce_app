@@ -3,5 +3,6 @@ abstract class Routes {
   static const String login = '/login';
   static const String signup = '/signup';
   static const String details = '/detials';
+  static const String cart="/cart";
   
 }

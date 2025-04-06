@@ -1,7 +1,11 @@
 import 'package:carto/core/networking/dio_consumer.dart';
 import 'package:carto/core/router/routes.dart';
 import 'package:carto/core/widgets/main_view.dart';
+import 'package:carto/features/cart/cubit/fetch_cart_cubit_cubit.dart';
+import 'package:carto/features/cart/data/repo/cart_repo.dart';
+import 'package:carto/features/cart/ui/cart_screen.dart';
 import 'package:carto/features/home/cubit/drawer_cubit.dart';
+import 'package:carto/features/home/data/models/products_model.dart';
 import 'package:carto/features/login/cubit/login_cubit.dart';
 import 'package:carto/features/login/data/repo/login_repo.dart';
 import 'package:carto/features/login/ui/login.dart';
@@ -25,7 +29,11 @@ class AppRouter {
                   child: MainView(),
                 ));
       case Routes.details:
-        return MaterialPageRoute(builder: (_) => DetailsScreen());
+        final product = settings.arguments as Product;
+        return MaterialPageRoute(
+            builder: (_) => DetailsScreen(
+                  product: product,
+                ));
       case Routes.login:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
@@ -41,6 +49,14 @@ class AppRouter {
                     SignUpRepo(api: DioConsumer(dio: Dio())),
                   ),
                   child: Signup(),
+                ));
+      case Routes.cart:
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                  create: (context) => FetchCartCubit(
+                    CartRepo(api: DioConsumer(dio: Dio())),
+                  )..fetchCart(),
+                  child: CartScreen(),
                 ));
 
       default:
