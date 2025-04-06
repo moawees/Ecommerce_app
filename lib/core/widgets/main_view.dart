@@ -1,8 +1,13 @@
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
+import 'package:carto/core/networking/dio_consumer.dart';
 import 'package:carto/core/theme/colors.dart';
+import 'package:carto/features/cart/cubit/fetch_cart_cubit_cubit.dart';
+import 'package:carto/features/cart/data/repo/cart_repo.dart';
+import 'package:carto/features/cart/ui/cart_screen.dart';
 import 'package:carto/features/home/cubit/drawer_cubit.dart';
 import 'package:carto/features/home/ui/home_screen.dart';
 import 'package:carto/features/home/ui/widgets/custom_drawer.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,11 +29,16 @@ class _MainViewState extends State<MainView> {
     super.dispose();
   }
 
-  final List<Widget> _pages = const [
-    HomeScreen(),
-    Center(child: Text("Search", style: TextStyle(fontSize: 24))),
-    Center(child: Text("Favourite", style: TextStyle(fontSize: 24))),
-    Center(child: Text("Profile", style: TextStyle(fontSize: 24))),
+  final List<Widget> _pages = [
+    const HomeScreen(),
+    BlocProvider(
+      create: (context) => FetchCartCubit(
+        CartRepo(api: DioConsumer(dio: Dio())),
+      )..fetchCart(),
+      child: const CartScreen(),
+    ),
+    const Center(child: Text("Favourite", style: TextStyle(fontSize: 24))),
+    const Center(child: Text("Profile", style: TextStyle(fontSize: 24))),
   ];
 
   @override
@@ -40,10 +50,36 @@ class _MainViewState extends State<MainView> {
         double scaleFactor = isDrawerOpen ? 0.7 : 1;
 
         return Scaffold(
+          bottomNavigationBar: Visibility(
+            visible: !isDrawerOpen,
+            maintainState: true,
+            child: AnimatedNotchBottomBar(
+              notchBottomBarController: _controller,
+              color: ColorsManager.backgroundColor,
+              showLabel: true,
+              notchColor: ColorsManager.primaryColor,
+              kIconSize: 20.r,
+              kBottomRadius: 15.r,
+              bottomBarItems: [
+                _buildBottomBarItem(Icons.home, "Home"),
+                _buildBottomBarItem(Icons.shopping_cart_outlined, "Cart"),
+                _buildBottomBarItem(Icons.favorite, "Favorite"),
+                _buildBottomBarItem(Icons.person, "Profile"),
+              ],
+              onTap: (index) {
+                if (!isDrawerOpen) {
+                  setState(() => _selectedIndex = index);
+                }
+              },
+            ),
+          ),
           body: Stack(
             children: [
-              CustomDrawer(
-                onClose: () => context.read<DrawerCubit>().closeDrawer(),
+              Visibility(
+                visible: isDrawerOpen,
+                child: CustomDrawer(
+                  onClose: () => context.read<DrawerCubit>().closeDrawer(),
+                ),
               ),
               AnimatedContainer(
                 transform: Matrix4.translationValues(xOffset, yOffset, 0)
@@ -69,33 +105,6 @@ class _MainViewState extends State<MainView> {
                       ? BorderRadius.circular(40)
                       : BorderRadius.zero,
                   child: _pages[_selectedIndex],
-                ),
-              ),
-              Positioned(
-                left: 0,
-                right: 0,
-                bottom: 0,
-                child: Opacity(
-                  opacity: isDrawerOpen ? 0.0 : 1.0,
-                  child: AnimatedNotchBottomBar(
-                    notchBottomBarController: _controller,
-                    color: ColorsManager.backgroundColor,
-                    showLabel: true,
-                    notchColor: ColorsManager.primaryColor,
-                    kIconSize: 20.r,
-                    kBottomRadius: 15.r,
-                    bottomBarItems: [
-                      _buildBottomBarItem(Icons.home, "Home"),
-                      _buildBottomBarItem(Icons.shopping_cart_outlined, "Cart"),
-                      _buildBottomBarItem(Icons.favorite, "Favorite"),
-                      _buildBottomBarItem(Icons.person, "Profile"),
-                    ],
-                    onTap: (index) {
-                      if (!isDrawerOpen) {
-                        setState(() => _selectedIndex = index);
-                      }
-                    },
-                  ),
                 ),
               ),
             ],
